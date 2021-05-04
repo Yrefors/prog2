@@ -33,7 +33,12 @@ def main():
 	print(f"Python times: {py_times}")
 	print(f"C++ times: {cpp_times}")
 
-	plt.plot(rng,py_times,rng,cpp_times)
+	fig, ax = plt.subplots()
+	ax.plot(rng,py_times,'r--',label='Python')
+	ax.plot(rng,cpp_times,'k-',label='C++')
+	ax.set_xlabel('n')
+	ax.set_ylabel('Seconds')
+	legend=ax.legend(loc='upper left', shadow=True,fontsize='small')
 	plt.savefig('fib_times.pdf')
 
 if __name__ == '__main__':
