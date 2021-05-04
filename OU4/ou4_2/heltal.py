@@ -20,3 +20,6 @@ class Heltal(object):
         
 	def __del__(self):
 		return lib.Heltal_delete(self.obj)
+
+	def fib(self):
+		return lib.Heltal_fib(self.obj)
