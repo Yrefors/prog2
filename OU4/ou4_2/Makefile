@@ -1,6 +1,6 @@
 # Makefile for OU4
 all:
-	g++ -c -fPIC heltal.cpp -o heltal.o
-	g++ -shared -o libheltal.so  heltal.o	
+	g++ -c -fPIC fibonacci.cpp -o fibonacci.o
+	g++ -shared -o libfibonacci.so  fibonacci.o	
 clean:
 	rm -fr *.o *.so __pycache__
