@@ -11,7 +11,7 @@ def fib_py(n):
 		return fib_py(n-1)+fib_py(n-2)
 
 def main():
-	rng = list(range(30,35))
+	rng = list(range(30,45))
 
 	py_times = []
 	cpp_times = []
@@ -36,6 +36,7 @@ def main():
 	fig, ax = plt.subplots()
 	ax.plot(rng,py_times,'r--',label='Python')
 	ax.plot(rng,cpp_times,'k-',label='C++')
+	ax.set_title('Time comparison for Fibonacci calculations')
 	ax.set_xlabel('n')
 	ax.set_ylabel('Seconds')
 	legend=ax.legend(loc='upper left', shadow=True,fontsize='small')
