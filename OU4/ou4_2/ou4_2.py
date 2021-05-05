@@ -11,16 +11,16 @@ def fib_py(n):
 		return fib_py(n-1)+fib_py(n-2)
 
 def main():
-	rng = list(range(30,45))
+	rng = list(range(30,48))
 
-	py_times = []
+	#py_times = []
 	cpp_times = []
 
-	for n in rng:
-		tic = pc()
-		fib_py(n)
-		toc = pc()
-		py_times.append(round(toc-tic,2))
+	#for n in rng:
+	#	tic = pc()
+	#	fib_py(n)
+	#	toc = pc()
+	#	py_times.append(round(toc-tic,2))
 
 	f = Heltal(0)
 	for n in rng:
@@ -30,17 +30,18 @@ def main():
 		toc = pc()
 		cpp_times.append(round(toc-tic,2))
 
-	print(f"Python times: {py_times}")
+	#print(f"Python times: {py_times}")
 	print(f"C++ times: {cpp_times}")
-
-	fig, ax = plt.subplots()
-	ax.plot(rng,py_times,'r--',label='Python')
-	ax.plot(rng,cpp_times,'k-',label='C++')
-	ax.set_title('Time comparison for Fibonacci calculations')
-	ax.set_xlabel('n')
-	ax.set_ylabel('Seconds')
-	legend=ax.legend(loc='upper left', shadow=True,fontsize='small')
-	plt.savefig('fib_times.pdf')
+	f.set(47)
+	print(f"fib(47): {f.fib()}")
+	#fig, ax = plt.subplots()
+	#ax.plot(rng,py_times,'r--',label='Python')
+	#ax.plot(rng,cpp_times,'k-',label='C++')
+	#ax.set_title('Time comparison for Fibonacci calculations')
+	#ax.set_xlabel('n')
+	#ax.set_ylabel('Seconds')
+	#legend=ax.legend(loc='upper left', shadow=True,fontsize='small')
+	#plt.savefig('fib_times.pdf')
 
 if __name__ == '__main__':
 	main()
